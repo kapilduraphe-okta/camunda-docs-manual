@@ -254,7 +254,7 @@ The following is a list with the most commonly used process engine configuration
     <td><code>databaseSchemaUpdate</code></td>
     <td>String</td>
     <td>
-        Sets the value for process engine <a href="{{< ref "/user-guide/process-engine/database.md#database-configuration">}}">database schema creation</a>.
+        Sets the value for process engine <a href="{{< ref "/user-guide/process-engine/database/database-configuration.md">}}">database schema creation</a>.
       <p>
         <strong>Values:</strong> <code>false</code>, <code>create-drop</code>, <code>true</code>.
       </p>
@@ -274,6 +274,14 @@ The following is a list with the most commonly used process engine configuration
     <td>Integer</td>
     <td>
         Specifies how many times a job will be executed before an incident is raised. Default value: <code>3</code>
+    </td>
+  </tr>
+
+  <tr>
+    <td><code>commandRetries</code></td>
+    <td>Integer</td>
+    <td>
+        <b>Only used with CockroachDB.</b> Specifies how many times a Command will be retried before a <code>CrdbTransactionRetryException</code> is reported to the caller (more details <a href="{{< ref "/user-guide/process-engine/database/cockroachdb-configuration.md" >}}">here</a>). Default value: <code>0</code>
     </td>
   </tr>
 
@@ -521,7 +529,7 @@ The following is a list with the most commonly used process engine configuration
     <td>
         Controls if the engine executes the jdbc statements as Batch or not.
       <p>
-        Default is <code><strong>true</strong></code>, but this has to be disabled for some databases. See <a href="{{<ref "/user-guide/process-engine/database.md#jdbc-batch-processing" >}}">the user guide</a> for further details.
+        Default is <code><strong>true</strong></code>, but this has to be disabled for some databases. See <a href="{{<ref "/user-guide/process-engine/database/database-configuration.md#jdbc-batch-processing" >}}">the user guide</a> for further details.
       </p>
     </td>
   </tr>
